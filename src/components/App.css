@@ -1,0 +1,19 @@
+.app {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    background-color: lightyellow;
+}
+
+.header {
+    background-color: lightsalmon;
+}
+
+.content {
+    flex: 1 0 auto;
+    background-color: lightgreen;
+}
+
+.footer {
+    background-color: lightblue;
+}
