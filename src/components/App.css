@@ -2,18 +2,25 @@
     display: flex;
     height: 100vh;
     flex-direction: column;
+    flex-wrap: nowrap;
     background-color: lightyellow;
 }
 
 .header {
+    flex-shrink: 0;
     background-color: lightsalmon;
 }
 
 .content {
-    flex: 1 0 auto;
+    flex-grow: 1;
+
+    /* this adds a scrollbar when the content takes up more space than available to display */
+    overflow: auto;
+
     background-color: lightgreen;
 }
 
 .footer {
+    flex-shrink: 0;
     background-color: lightblue;
 }

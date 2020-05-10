@@ -1,7 +1,14 @@
 import React from "react";
 
 const Messages = () => {
-    return <div>Messages</div>;
+    let messages = [];
+    for (let i = 0; i < 100; i++) {
+        messages.push({ id: i, text: `message ${i}` });
+    }
+
+    return messages.map((message) => (
+        <div key={message.id}>{message.text}</div>
+    ));
 };
 
 export default Messages;
