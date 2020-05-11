@@ -1,6 +1,13 @@
+#root {
+    margin: 0;
+    padding: 0;
+    /* need to specify 100% height for every element that surrounds .app */
+    height: 100%;
+}
+
 .app {
     display: flex;
-    height: 100vh;
+    height: 100%;
     flex-direction: column;
     flex-wrap: nowrap;
     background-color: lightyellow;
