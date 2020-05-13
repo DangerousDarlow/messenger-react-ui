@@ -6,13 +6,9 @@ import "./App.css";
 
 const App = () => {
     return (
-        <div className="ui app">
-            <div className="ui header">
-                <div className="ui center aligned grid">
-                    <div className="column">
-                        <Connect />
-                    </div>
-                </div>
+        <div className="app">
+            <div className="header">
+                <Connect />
             </div>
             <div className="content">
                 <Messages />
