@@ -1,6 +1,6 @@
 .app {
     display: flex;
-    height: 100vh;
+    height: -webkit-fill-available;
     flex-direction: column;
     flex-wrap: nowrap;
     background-color: lightyellow;
