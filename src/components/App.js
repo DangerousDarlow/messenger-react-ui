@@ -17,7 +17,10 @@ const styles = {
         backgroundColor: "lightsalmon",
     },
     content: {
-        // Critical to limiting the content size to what’s available on screen
+        // Makes the content section fill the available space
+        flexGrow: 1,
+
+        // Limits the display of the content section to the available space
         overflow: "auto",
 
         backgroundColor: "lightgreen",
