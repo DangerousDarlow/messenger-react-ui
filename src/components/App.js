@@ -9,22 +9,20 @@ import Send from "./Send";
 const styles = {
     app: {
         display: "flex",
-        height: "-webkit-fill-available",
+        height: "100%",
         flexDirection: "column",
-        flexWrap: "nowrap",
         backgroundColor: "lightyellow",
     },
     header: {
-        flexShrink: 0,
         backgroundColor: "lightsalmon",
     },
     content: {
-        flexGrow: 1,
+        // Critical to limiting the content size to what’s available on screen
         overflow: "auto",
+
         backgroundColor: "lightgreen",
     },
     footer: {
-        flexShrink: 0,
         backgroundColor: "lightblue",
     },
 };
