@@ -1,10 +1,10 @@
 import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import { withStyles } from "@material-ui/core/styles";
 
 import TopBar from "./TopBar";
 import Messages from "./Messages";
-import Send from "./Send";
 
 const styles = {
     app: {
@@ -16,18 +16,6 @@ const styles = {
     header: {
         backgroundColor: "lightsalmon",
     },
-    content: {
-        // Makes the content section fill the available space
-        flexGrow: 1,
-
-        // Limits the display of the content section to the available space
-        overflow: "auto",
-
-        backgroundColor: "lightgreen",
-    },
-    footer: {
-        backgroundColor: "lightblue",
-    },
 };
 
 const App = ({ classes }) => {
@@ -36,12 +24,9 @@ const App = ({ classes }) => {
             <div className={classes.header}>
                 <TopBar />
             </div>
-            <div className={classes.content}>
-                <Messages />
-            </div>
-            <div className={classes.footer}>
-                <Send />
-            </div>
+            <Router>
+                <Route exact path="/" component={Messages} />
+            </Router>
         </div>
     );
 };

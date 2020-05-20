@@ -1,14 +1,36 @@
 import React from "react";
 
-const Messages = () => {
-    let messages = [];
-    for (let i = 0; i < 10; i++) {
-        messages.push({ id: i, text: `message ${i}` });
-    }
+import { withStyles } from "@material-ui/core/styles";
 
-    return messages.map((message) => (
-        <div key={message.id}>{message.text}</div>
-    ));
+import MessageList from "./MessageList";
+import Send from "./Send";
+
+const styles = {
+    content: {
+        // Makes the content section fill the available space
+        flexGrow: 1,
+
+        // Limits the display of the content section to the available space
+        overflow: "auto",
+
+        backgroundColor: "lightgreen",
+    },
+    footer: {
+        backgroundColor: "lightblue",
+    },
 };
 
-export default Messages;
+const Messages = ({ classes }) => {
+    return (
+        <>
+            <div className={classes.content}>
+                <MessageList />
+            </div>
+            <div className={classes.footer}>
+                <Send />
+            </div>
+        </>
+    );
+};
+
+export default withStyles(styles)(Messages);
