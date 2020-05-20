@@ -28,15 +28,12 @@ const Name = ({ classes }) => {
                 fullWidth
             />
             <div className={classes.rightAlignedButtons}>
-                <Button className={classes.button} variant="outlined">
-                    Cancel
-                </Button>
                 <Button
                     className={classes.button}
                     variant="contained"
                     color="primary"
                 >
-                    Change
+                    Confirm
                 </Button>
             </div>
         </Container>
