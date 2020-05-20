@@ -2,7 +2,7 @@ import React from "react";
 
 import { withStyles } from "@material-ui/core/styles";
 
-import Connect from "./Connect";
+import TopBar from "./TopBar";
 import Messages from "./Messages";
 import Send from "./Send";
 
@@ -34,7 +34,7 @@ const App = ({ classes }) => {
     return (
         <div className={classes.app}>
             <div className={classes.header}>
-                <Connect />
+                <TopBar />
             </div>
             <div className={classes.content}>
                 <Messages />
