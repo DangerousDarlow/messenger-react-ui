@@ -1,9 +1,6 @@
 import React from "react";
 
-import { withStyles } from "@material-ui/core";
-import { AppBar } from "@material-ui/core";
-import { Toolbar } from "@material-ui/core";
-import { Typography } from "@material-ui/core";
+import { AppBar, Toolbar, Typography, withStyles } from "@material-ui/core";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faToilet } from "@fortawesome/pro-duotone-svg-icons";

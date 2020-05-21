@@ -1,7 +1,6 @@
 import React from "react";
 
-import { withStyles } from "@material-ui/core";
-import { Grid, Paper, Typography } from "@material-ui/core";
+import { Grid, Paper, Typography, withStyles } from "@material-ui/core";
 import { lightGreen, purple } from "@material-ui/core/colors";
 
 const styles = {

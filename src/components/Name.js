@@ -1,9 +1,6 @@
 import React from "react";
 
-import { withStyles } from "@material-ui/core";
-import { Button } from "@material-ui/core";
-import { Container } from "@material-ui/core";
-import { TextField } from "@material-ui/core";
+import { Button, Container, TextField, withStyles } from "@material-ui/core";
 
 const styles = {
     root: {

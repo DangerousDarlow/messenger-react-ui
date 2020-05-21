@@ -1,8 +1,6 @@
 import React from "react";
 
-import { withStyles } from "@material-ui/core";
-import { Container } from "@material-ui/core";
-import { Grid } from "@material-ui/core";
+import { Container, Grid, withStyles } from "@material-ui/core";
 
 import Message from "./Message";
 import testMessageData from "../test_data/messages.json";
