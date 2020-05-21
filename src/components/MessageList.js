@@ -1,14 +1,30 @@
 import React from "react";
 
-const MessageList = () => {
-    let messages = [];
-    for (let i = 0; i < 10; i++) {
-        messages.push({ id: i, text: `message ${i}` });
-    }
+import { withStyles } from "@material-ui/core";
+import { Container } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 
-    return messages.map((message) => (
-        <div key={message.id}>{message.text}</div>
-    ));
+import Message from "./Message";
+import testMessageData from "../test_data/messages.json";
+
+const styles = {
+    root: {
+        marginTop: 16,
+    },
 };
 
-export default MessageList;
+const MessageList = ({ classes }) => {
+    return (
+        <Container className={classes.root}>
+            <Grid container spacing={1}>
+                {testMessageData.map((message) => (
+                    <Grid key={message.id} item xs={12}>
+                        <Message message={message} you="anna" />
+                    </Grid>
+                ))}
+            </Grid>
+        </Container>
+    );
+};
+
+export default withStyles(styles)(MessageList);

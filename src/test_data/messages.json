@@ -1,0 +1,23 @@
+[
+  {
+    "id": "4fdc3524-be28-477a-ba18-14ec3bb70914",
+    "timestamp": "2020-05-21T19:07:20.538Z",
+    "from": "anna",
+    "to": "bill",
+    "text": "Hello. How are you?"
+  },
+  {
+    "id": "62ab77d1-35f8-4dc6-879e-20918961728f",
+    "timestamp": "2020-05-21T19:07:36.866Z",
+    "from": "bill",
+    "to": "anna",
+    "text": "I am great!"
+  },
+  {
+    "id": "f8e7938e-6efb-4030-bfc7-04db83d5c015",
+    "timestamp": "2020-05-21T19:22:53.442Z",
+    "from": "anna",
+    "to": "bill",
+    "text": "That's awesome!"
+  }
+]

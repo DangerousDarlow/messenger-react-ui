@@ -21,9 +21,7 @@ const TopBar = ({ classes }) => {
             <AppBar position="static">
                 <Toolbar>
                     <FontAwesomeIcon icon={faToilet} size="2x" />
-                    <Typography className={classes.text}>
-                        name_placeholder
-                    </Typography>
+                    <Typography className={classes.text}>anna</Typography>
                 </Toolbar>
             </AppBar>
         </>
