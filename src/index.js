@@ -1,5 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { HashRouter as Router } from "react-router-dom";
+
+import { configureStore } from "@reduxjs/toolkit";
 
 import * as serviceWorker from "./serviceWorker";
 import { CssBaseline, MuiThemeProvider } from "@material-ui/core";
@@ -7,6 +11,7 @@ import { createMuiTheme } from "@material-ui/core/styles";
 
 import "./index.css";
 import App from "./components/App";
+import reducers from "./reducers";
 
 const theme = createMuiTheme({
     palette: {
@@ -14,11 +19,19 @@ const theme = createMuiTheme({
     },
 });
 
+const store = configureStore({
+    reducer: reducers,
+});
+
 ReactDOM.render(
     <React.StrictMode>
         <MuiThemeProvider theme={theme}>
             <CssBaseline />
-            <App />
+            <Provider store={store}>
+                <Router>
+                    <App />
+                </Router>
+            </Provider>
         </MuiThemeProvider>
     </React.StrictMode>,
     document.getElementById("root")

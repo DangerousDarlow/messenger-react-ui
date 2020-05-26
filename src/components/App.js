@@ -1,5 +1,6 @@
-import React from "react";
-import { HashRouter as Router, Route } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Route, useHistory, withRouter } from "react-router-dom";
+import { connect } from "react-redux";
 
 import { withStyles } from "@material-ui/core";
 
@@ -15,18 +16,30 @@ const styles = {
     },
 };
 
-const App = ({ classes }) => {
+const App = ({ classes, isNameSet }) => {
+    const history = useHistory();
+
+    useEffect(() => {
+        if (!isNameSet && history.location.pathname !== "/name") {
+            history.push("/name");
+        }
+    }, [history, isNameSet]);
+
     return (
         <div className={classes.root}>
             <div>
                 <TopBar />
             </div>
-            <Router>
-                <Route exact path="/" component={Messages} />
-                <Route exact path="/name" component={Name} />
-            </Router>
+            <Route exact path="/" component={Messages} />
+            <Route exact path="/name" component={Name} />
         </div>
     );
 };
 
-export default withStyles(styles)(App);
+const mapStateToProps = (state) => {
+    return { isNameSet: state.user.isNameSet };
+};
+
+export default withRouter(
+    connect(mapStateToProps, null)(withStyles(styles)(App))
+);
