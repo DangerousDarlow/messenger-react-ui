@@ -17,9 +17,9 @@ const styles = {
 };
 
 const App = ({ classes }) => {
-    const history = useHistory();
-
     const isNameSet = useSelector((state) => state.user.isNameSet);
+
+    const history = useHistory();
 
     useEffect(() => {
         if (!isNameSet && history.location.pathname !== "/name") {
