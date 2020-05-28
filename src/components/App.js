@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import { Route, useHistory, withRouter } from "react-router-dom";
-import { connect } from "react-redux";
+import { Route, useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import { withStyles } from "@material-ui/core";
 
@@ -16,8 +16,10 @@ const styles = {
     },
 };
 
-const App = ({ classes, isNameSet }) => {
+const App = ({ classes }) => {
     const history = useHistory();
+
+    const isNameSet = useSelector((state) => state.user.isNameSet);
 
     useEffect(() => {
         if (!isNameSet && history.location.pathname !== "/name") {
@@ -36,10 +38,4 @@ const App = ({ classes, isNameSet }) => {
     );
 };
 
-const mapStateToProps = (state) => {
-    return { isNameSet: state.user.isNameSet };
-};
-
-export default withRouter(
-    connect(mapStateToProps, null)(withStyles(styles)(App))
-);
+export default withStyles(styles)(App);
