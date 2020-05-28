@@ -28,8 +28,11 @@ const Name = ({ classes }) => {
     const history = useHistory();
 
     const dispatchName = () => {
-        dispatch(setName(localName));
-        history.push("/");
+        let trimmedName = localName?.trim();
+        if (trimmedName?.length > 0) {
+            dispatch(setName(trimmedName));
+            history.push("/");
+        }
     };
 
     const keyPressed = (event) => {

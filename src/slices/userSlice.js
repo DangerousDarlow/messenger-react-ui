@@ -6,7 +6,7 @@ const userSlice = createSlice({
     reducers: {
         setName(state, action) {
             state.name = action.payload;
-            state.isNameSet = state.name !== null;
+            state.isNameSet = state.name !== null && state.name !== "";
         },
     },
 });
