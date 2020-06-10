@@ -23,6 +23,8 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "redux": "^4.0.5",
+    "sockjs-client": "^1.4.0",
+    "stompjs-websocket": "^4.1.7",
     "typeface-roboto": "^0.0.75"
   },
   "scripts": {
