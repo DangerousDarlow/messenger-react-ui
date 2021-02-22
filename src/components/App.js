@@ -21,6 +21,7 @@ const styles = {
 
 const App = ({ classes }) => {
     const isNameSet = useSelector((state) => state.user.isNameSet);
+    const name = useSelector((state) => state.user.name);
 
     const history = useHistory();
 
@@ -32,13 +33,14 @@ const App = ({ classes }) => {
 
     useEffect(() => {
         if (isNameSet !== false) {
-            const socket = new SockJS("https://whats-crap.herokuapp.com/websocket");
+            const host = name === "local" ? "http://localhost:8080" : "https://whats-crap.herokuapp.com";
+            const socket = new SockJS(`${host}/websocket`);
             const stompClient = Stomp.over(socket);
-            stompClient.connect({}, (frame) => {
+            stompClient.connect({}, () => {
                 stompClient.send("/inbound/text", {}, "hi there");
             });
         }
-    }, [isNameSet]);
+    }, [isNameSet, name]);
 
     return (
         <div className={classes.root}>
