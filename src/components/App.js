@@ -33,7 +33,7 @@ const App = ({ classes }) => {
 
     useEffect(() => {
         if (isNameSet !== false) {
-            const host = name === "local" ? "https://1f705b11909a.eu.ngrok.io" : "https://whats-crap.herokuapp.com";
+            const host = name === "local" ? "http://localhost:8080" : "https://whats-crap.herokuapp.com";
             const socket = new SockJS(`${host}/websocket`);
             const stompClient = Stomp.over(socket);
             stompClient.connect({}, () => {
