@@ -32,7 +32,7 @@ const App = ({ classes }) => {
 
     useEffect(() => {
         if (isNameSet !== false) {
-            const socket = new SockJS("http://localhost:8080/websocket");
+            const socket = new SockJS("https://whats-crap.herokuapp.com/websocket");
             const stompClient = Stomp.over(socket);
             stompClient.connect({}, (frame) => {
                 stompClient.send("/inbound/text", {}, "hi there");
