@@ -1,68 +1,42 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# WhatsCrap Messenger
 
-## Available Scripts
+WhatsCrap Messenger is an instant messaging application with two main objectives
 
-In the project directory, you can run:
+1. Improve my UI, JavaScript, React & Redux skills
+1. Explore using Web Sockets for communication between browser client and service
 
-### `yarn start`
+The project consists of two parts
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Frontend UI
+1. Backend service
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `yarn test`
+This repository is the frontend UI which is written in [JavaScript](https://www.javascript.com/), uses [React](https://reactjs.org/) & [Redux](https://redux.js.org/) and is hosted on [Netlify](https://www.netlify.com/). The address of the hosted Netlify service is https://heuristic-ardinghelli-186726.netlify.app/
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Repository https://github.com/DangerousDarlow/messenger is the service which is written in [Kotlin](https://kotlinlang.org/), uses the [Spring Boot](https://spring.io/projects/spring-boot) framework and is hosted on [Heroku](https://www.heroku.com/). The address of the hosted Heroku service is https://whats-crap.herokuapp.com/
 
-### `yarn build`
+## How To Build & Run
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Building and running the application locally requires the following to be installed
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+1. [Node](https://nodejs.org/)
+1. [Yarn](https://yarnpkg.com/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+It is recommended that Node is installed using Node Version Manager
 
-### `yarn eject`
+* Posix - https://github.com/nvm-sh/nvm
+* Windows - https://github.com/coreybutler/nvm-windows
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The project uses icons from the Pro (subscription) version of [Font Awesome](https://fontawesome.com/). Create an environment variable named `FONTAWESOME_NPM_AUTH_TOKEN` and set it to the value of your Font Awesome `Pro Package Token`. To get your token log in to Font Awesome and navigate to `Account Details`. 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Clone the repository
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+> git clone https://github.com/DangerousDarlow/messenger-react-ui.git
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Download dependencies
 
-## Learn More
+> yarn install
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Run and application in development mode
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+> yarn start
