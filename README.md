@@ -40,3 +40,7 @@ Download dependencies
 Run and application in development mode
 
 > yarn start
+
+## Troubleshooting
+
+If a timeout connecting to the service occurs this is likely because it's asleep. Try again after about 30 seconds.
