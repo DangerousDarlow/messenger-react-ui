@@ -1,16 +1,8 @@
-import React, { useContext, useRef, useEffect } from "react";
+import React, { useContext, useRef, useEffect } from 'react'
 import { SocketContext } from './SocketProvider'
-
-import {
-    Container,
-    Grid,
-    IconButton,
-    TextField,
-    withStyles,
-} from "@material-ui/core";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faToilet } from "@fortawesome/pro-duotone-svg-icons";
+import { Container, Grid, IconButton, TextField, WithStyles, withStyles } from '@material-ui/core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faToilet } from '@fortawesome/pro-duotone-svg-icons'
 
 const styles = {
     grow: {
@@ -19,27 +11,32 @@ const styles = {
     margin: {
         marginBottom: 8,
     },
-};
+}
 
-const Send = ({ classes }) => {
+interface SendProps extends WithStyles<typeof styles> {
+}
 
-    const inputField = useRef()
+const Send = ({ classes }: SendProps) => {
+
+    const inputField = useRef<HTMLInputElement>()
     const { send } = useContext(SocketContext)
 
     const sendMessage = () => {
-        send(inputField.current.value);
+        if (inputField.current) {
+            send(inputField.current.value)
             inputField.current.value = ''
+        }
     }
-    
+
     return (
         <Container>
-            <Grid className={classes.margin} container justify="flex-end">
+            <Grid className={classes.margin} container justify='flex-end'>
                 <Grid className={classes.grow} item>
                     <TextField
                         inputRef={inputField}
-                        id="outlined-basic"
-                        variant="outlined"
-                        placeholder="Type your message here..."
+                        id='outlined-basic'
+                        variant='outlined'
+                        placeholder='Type your message here...'
                         fullWidth
                         onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
                     />
@@ -51,7 +48,7 @@ const Send = ({ classes }) => {
                 </Grid>
             </Grid>
         </Container>
-    );
-};
+    )
+}
 
-export default withStyles(styles)(Send);
+export default withStyles(styles)(Send)

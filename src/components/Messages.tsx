@@ -1,10 +1,8 @@
-import React from "react";
-
-import { withStyles } from "@material-ui/core";
-
-import MessageList from "./MessageList";
-import Send from "./Send";
-import { SocketProvider } from './SocketProvider';
+import React from 'react'
+import { WithStyles, withStyles } from '@material-ui/core'
+import MessageList from './MessageList'
+import Send from './Send'
+import { SocketProvider } from './SocketProvider'
 
 const styles = {
     messageList: {
@@ -12,11 +10,14 @@ const styles = {
         flexGrow: 1,
 
         // Limits the display of the content section to the available space
-        overflow: "auto",
+        overflow: 'auto',
     },
-};
+}
 
-const Messages = ({ classes }) => {
+interface MessageProps extends WithStyles<typeof styles> {
+}
+
+const Messages = ({ classes }: MessageProps) => {
     return (
         <SocketProvider>
             <div className={classes.messageList}>
@@ -26,7 +27,7 @@ const Messages = ({ classes }) => {
                 <Send />
             </div>
         </SocketProvider>
-    );
-};
+    )
+}
 
-export default withStyles(styles)(Messages);
+export default withStyles(styles)(Messages)
