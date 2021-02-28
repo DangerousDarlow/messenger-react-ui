@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext, useRef, useEffect } from "react";
+import { SocketContext } from './SocketProvider'
 
 import {
     Container,
@@ -21,19 +22,30 @@ const styles = {
 };
 
 const Send = ({ classes }) => {
+
+    const inputField = useRef()
+    const { send } = useContext(SocketContext)
+
+    const sendMessage = () => {
+        send(inputField.current.value);
+            inputField.current.value = ''
+    }
+    
     return (
         <Container>
             <Grid className={classes.margin} container justify="flex-end">
                 <Grid className={classes.grow} item>
                     <TextField
+                        inputRef={inputField}
                         id="outlined-basic"
                         variant="outlined"
                         placeholder="Type your message here..."
                         fullWidth
+                        onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
                     />
                 </Grid>
                 <Grid item>
-                    <IconButton>
+                    <IconButton disabled={!send} onClick={sendMessage}>
                         <FontAwesomeIcon icon={faToilet} />
                     </IconButton>
                 </Grid>

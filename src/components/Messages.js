@@ -4,6 +4,7 @@ import { withStyles } from "@material-ui/core";
 
 import MessageList from "./MessageList";
 import Send from "./Send";
+import { SocketProvider } from './SocketProvider';
 
 const styles = {
     messageList: {
@@ -17,14 +18,14 @@ const styles = {
 
 const Messages = ({ classes }) => {
     return (
-        <>
+        <SocketProvider>
             <div className={classes.messageList}>
                 <MessageList />
             </div>
             <div>
                 <Send />
             </div>
-        </>
+        </SocketProvider>
     );
 };
 

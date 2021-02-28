@@ -4,9 +4,6 @@ import { useSelector } from "react-redux";
 
 import { withStyles } from "@material-ui/core";
 
-import SockJS from "sockjs-client";
-import Stomp from "stompjs-websocket";
-
 import Messages from "./Messages";
 import Name from "./Name";
 import TopBar from "./TopBar";
@@ -30,17 +27,6 @@ const App = ({ classes }) => {
             history.push("/name");
         }
     }, [history, isNameSet]);
-
-    useEffect(() => {
-        if (isNameSet !== false) {
-            const host = name === "local" ? "http://localhost:8080" : "https://whats-crap.herokuapp.com";
-            const socket = new SockJS(`${host}/websocket`);
-            const stompClient = Stomp.over(socket);
-            stompClient.connect({}, () => {
-                stompClient.send("/inbound/text", {}, "hi there");
-            });
-        }
-    }, [isNameSet, name]);
 
     return (
         <div className={classes.root}>
