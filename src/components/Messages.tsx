@@ -1,8 +1,8 @@
-import React from 'react'
-import { WithStyles, withStyles } from '@material-ui/core'
-import MessageList from './MessageList'
-import Send from './Send'
-import { SocketProvider } from './SocketProvider'
+import React from "react"
+import { WithStyles, withStyles } from "@material-ui/core"
+import MessageList from "./MessageList"
+import Send from "./Send"
+import { SocketProvider } from "./SocketProvider"
 
 const styles = {
     messageList: {
@@ -10,8 +10,8 @@ const styles = {
         flexGrow: 1,
 
         // Limits the display of the content section to the available space
-        overflow: 'auto',
-    },
+        overflow: "auto"
+    }
 }
 
 interface MessageProps extends WithStyles<typeof styles> {

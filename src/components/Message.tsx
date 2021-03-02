@@ -1,28 +1,28 @@
-import React from 'react'
-import { Grid, Paper, Typography, WithStyles, withStyles } from '@material-ui/core'
-import { lightGreen, purple } from '@material-ui/core/colors'
-import { IMessage } from '../model/IMessage'
+import React from "react"
+import { Grid, Paper, Typography, WithStyles, withStyles } from "@material-ui/core"
+import { lightGreen, purple } from "@material-ui/core/colors"
+import { IMessage } from "../model/IMessage"
 
 const styles = {
     margin: {
-        margin: 8,
+        margin: 8
     },
     yourBackColour: {
-        backgroundColor: lightGreen[50],
+        backgroundColor: lightGreen[50]
     },
     notYourBackColour: {
-        backgroundColor: purple[50],
+        backgroundColor: purple[50]
     },
     nameText: {
         color: purple[200],
-        marginRight: 4,
+        marginRight: 4
     },
     yourMessageText: {
-        color: lightGreen[800],
+        color: lightGreen[800]
     },
     notYourMessageText: {
-        color: purple[800],
-    },
+        color: purple[800]
+    }
 }
 
 interface MessageProps extends WithStyles<typeof styles> {
@@ -31,26 +31,26 @@ interface MessageProps extends WithStyles<typeof styles> {
 }
 
 const Message = ({ classes, message, you }: MessageProps) => {
-    let yours = message.from === you
+    const yours = message.from === you
 
     return (
         <Paper
             className={
                 yours ? classes.yourBackColour : classes.notYourBackColour
             }
-            variant='outlined'
+            variant="outlined"
         >
             <Grid
                 container
                 spacing={1}
-                justify={yours ? 'flex-end' : 'flex-start'}
+                justify={yours ? "flex-end" : "flex-start"}
             >
                 <Grid className={classes.margin} item>
                     {!yours && (
                         <Typography
                             className={classes.nameText}
-                            variant='body2'
-                            display='inline'
+                            variant="body2"
+                            display="inline"
                         >
                             {message.from}:
                         </Typography>
@@ -61,8 +61,8 @@ const Message = ({ classes, message, you }: MessageProps) => {
                                 ? classes.yourMessageText
                                 : classes.notYourMessageText
                         }
-                        variant='body2'
-                        display='inline'
+                        variant="body2"
+                        display="inline"
                     >
                         {message.text}
                     </Typography>

@@ -1,16 +1,16 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 const userSlice = createSlice({
-    name: 'user',
+    name: "user",
     initialState: { isNameSet: false, name: null as string | null },
     reducers: {
         setName(state, action) {
-            state.name = action.payload
-            state.isNameSet = state.name !== null && state.name !== ''
-        },
-    },
-})
+            state.name = action.payload;
+            state.isNameSet = state.name !== null && state.name !== "";
+        }
+    }
+});
 
-export const { setName } = userSlice.actions
+export const { setName } = userSlice.actions;
 
-export default userSlice.reducer
+export default userSlice.reducer;
